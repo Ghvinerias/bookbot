@@ -18,7 +18,6 @@ def collectLetters(letter):
     letterOccuranceSet = set()
     for i in letter:
         if i.isalpha():
-           # letterOccurance = set(i.lower()) 
             letterOccuranceSet.add(i.lower())
     letterOccuranceDict = dict.fromkeys(letterOccuranceSet, 0)
     enemies_dict = {}
@@ -34,14 +33,10 @@ def main():
     data = readFileContents(input_file)
     word_count = readFileWordCount(data)
     letterOccuranceDictionary = collectLetters(data)
-    print(letterOccuranceDictionary)
-    #print(collectLetters(data))
-    #print(word_count)
     print("--- Begin report of", input_file, "---")
     print(word_count, "words found in the document")
     print("")
     for letter in letterOccuranceDictionary:
         occuranceNumber = letterOccuranceDictionary[letter]
         print(f"The '{letter}'  character was found {occuranceNumber} times")
-  #testFunc()
 main()
